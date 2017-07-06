@@ -1,5 +1,4 @@
 <?php
-session_start();
 include("ConexionMySQL.php");
 
 $NombreTabla="Usuario";
@@ -10,6 +9,4 @@ mysqli_query($conexion,"INSERT INTO $NombreTabla (NOMBRE,ASIGNADO,ESTADO) VALUES
 }
 //mysqli_free_result($consulta);
 mysqli_close($conexion);
-
-
 ?>
