@@ -2,35 +2,10 @@
 session_start();
 include("ConexionMySQL.php");
 
+$consulta=mysqli_query("CREATE TABLE `Domotica`.`usuario` ( `ID` INT(10) NOT NULL AUTO_INCREMENT , `NOMBRE` VARCHAR NOT NULL , `ASIGNADO` VARCHAR(10) NOT NULL , `ESTADO` INT(1) NOT NULL , PRIMARY KEY (`ID`)) ENGINE = InnoDB;") or die("Problemas en consulta: ".mysql_error());
 
-$tabla=array();
-$i=0;
-
-if ($_POST['App']=="APP")
-{
-$consulta=mysql_query("SELECT ID_VEHICULO FROM FamiliaLlerenaNavarro GROUP BY ID_VEHICULO") or die("Problemas en consulta: ".mysql_error());
-    while($reg=mysql_fetch_array($consulta)){
-
-	$tabla[$i]=$reg['ID_VEHICULO'];
-	$i++;
-}
-} 
-else
-{
-$consulta=mysql_query("SELECT ID_VEHICULO FROM $_SESSION[user] GROUP BY ID_VEHICULO") or die("Problemas en consulta: ".mysql_error());
-    while($reg=mysql_fetch_array($consulta)){
-
-	$tabla[$i]=$reg;
-	$i++;
-}
-}
-
-
-
-echo json_encode($tabla);
-
-mysql_free_result($consulta);
-mysql_close($conexion);
+mysqli_free_result($consulta);
+mysqli_close($conexion);
 
 
 ?>
