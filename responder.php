@@ -2,15 +2,15 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-<title>Página de envío</title>
+<title>página de destino</title>
 </head>
 <body>
-<h1>Envío de variables a otra página.</h1>
+<h1>Al abrir esta página se han pasado las siguientes variables:</h1>
 <?php
-
-echo "TOMALO PAPA";
+$a=$_GET['a'];
+$b=$_GET['b'];
+echo "<p>variable $a : $a";
+echo "<p>variable $b : $b";
 ?>
-<p>Pulsar el siguiente enlace</p>
-
 </body>
 </html>
