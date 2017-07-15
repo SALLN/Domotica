@@ -9,7 +9,7 @@
         echo 'Creacion del socket fallida.';
     }else{
         // nos conectamos al socket servidor
-        $resultado = socket_connect($socket, '127.0.0.1', '7001');
+        $resultado = socket_connect($socket, '190.165.40.66', '55500');
         if($resultado === FALSE){
             echo 'Conexion al socket fallida.';
         }else{
